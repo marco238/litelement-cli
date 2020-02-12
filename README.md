@@ -9,11 +9,16 @@ First, install **generator-lit-cli** and **Yeoman** using [npm](https://www.npmj
 npm install -g yo generator-litelement-cli
 ```
 
+## Usage
+
 Then generate your new project:
 
 ```bash
 yo litelement-cli
 ```
+
+## Starter Kit Repo
+[Github Repo ⬇️](https://github.com/marco238/LitElement-Starter-Kit)
 
 ## License
 
