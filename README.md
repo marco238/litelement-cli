@@ -1,5 +1,5 @@
 # generator-lit-cli 🚀 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> A simple Lit-Element CLI to generate a complete scaffolding for a modern web component. Includes Webpack, Babel, Karma, Documentation and IE11 support. Router option is in development 🚧
+> A simple Lit-Element CLI to generate a complete scaffolding for a modern web component. Includes Webpack, Babel, Karma, Documentation, Storybook (demo manager) and IE11 support. Router option is in development 🚧
 
 ## Installation
 
