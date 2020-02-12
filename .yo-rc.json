@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Marcos Monzón",
+      "authorEmail": "marcomonzip@gmail.com",
+      "authorUrl": "https://github.com/marco238"
+    }
+  }
+}
