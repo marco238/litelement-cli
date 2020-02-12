@@ -18,7 +18,7 @@ yo litelement-cli
 ```
 
 ## Starter Kit Repo
-[Github Repo ⬇️](https://github.com/marco238/LitElement-Starter-Kit)
+If you only want to clone the scaffolding, then you have it here [Github Repo ⬇️](https://github.com/marco238/LitElement-Starter-Kit)
 
 ## License
 
