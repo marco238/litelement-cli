@@ -12,6 +12,13 @@ module.exports = class extends Generator {
 
     const prompts = [
       {
+        type: "list",
+        name: "elementType",
+        message: "Select the type of element you need:",
+        choices: ["Single Element", "Element with Router"],
+        default: "Single Element"
+      },
+      {
         type: "input",
         name: "elementName",
         message: "What would you like your element to be called?",
@@ -33,30 +40,34 @@ module.exports = class extends Generator {
 
   writing() {
     const elementName = this.props.elementName;
+    const elementType = this.props.elementType;
+    const fromSingleElement = "single_element";
 
-    this.fs.copyTpl(
-      `${this.templatePath()}/**/!(_)*`,
-      this.destinationPath(),
-      this.props
-    );
+    if (elementType === "Single Element") {
+      this.fs.copyTpl(
+        `${this.templatePath(fromSingleElement)}/**/!(_)*`,
+        this.destinationPath(),
+        this.props
+      );
 
-    this.fs.copyTpl(
-      this.templatePath("src/_element.js"),
-      this.destinationPath(`src/${elementName}.js`),
-      this.props
-    );
+      this.fs.copyTpl(
+        this.templatePath(`${fromSingleElement}/src/_element.js`),
+        this.destinationPath(`src/${elementName}.js`),
+        this.props
+      );
 
-    this.fs.copyTpl(
-      this.templatePath("test/_test.js"),
-      this.destinationPath(`test/${elementName}.test.js`),
-      this.props
-    );
+      this.fs.copyTpl(
+        this.templatePath(`${fromSingleElement}/test/_test.js`),
+        this.destinationPath(`test/${elementName}.test.js`),
+        this.props
+      );
 
-    this.fs.copyTpl(
-      this.templatePath(".storybook"),
-      this.destinationPath(".storybook"),
-      this.props
-    );
+      this.fs.copyTpl(
+        this.templatePath(`${fromSingleElement}/.storybook`),
+        this.destinationPath(".storybook"),
+        this.props
+      );
+    }
   }
 
   install() {
