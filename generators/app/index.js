@@ -42,6 +42,7 @@ module.exports = class extends Generator {
     const elementName = this.props.elementName;
     const elementType = this.props.elementType;
     const fromSingleElement = "single_element";
+    const fromRouterElement = "router_element";
 
     if (elementType === "Single Element") {
       this.fs.copyTpl(
@@ -64,6 +65,32 @@ module.exports = class extends Generator {
 
       this.fs.copyTpl(
         this.templatePath(`${fromSingleElement}/.storybook`),
+        this.destinationPath(".storybook"),
+        this.props
+      );
+    }
+
+    if (elementType === "Element with Router") {
+      this.fs.copyTpl(
+        `${this.templatePath(fromRouterElement)}/**/!(_)*`,
+        this.destinationPath(),
+        this.props
+      );
+
+      this.fs.copyTpl(
+        this.templatePath(`${fromRouterElement}/src/_element.js`),
+        this.destinationPath(`src/${elementName}.js`),
+        this.props
+      );
+
+      this.fs.copyTpl(
+        this.templatePath(`${fromRouterElement}/test/_test.js`),
+        this.destinationPath(`test/${elementName}.test.js`),
+        this.props
+      );
+
+      this.fs.copyTpl(
+        this.templatePath(`${fromRouterElement}/.storybook`),
         this.destinationPath(".storybook"),
         this.props
       );
