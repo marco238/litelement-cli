@@ -42,7 +42,7 @@ module.exports = class extends Generator {
     const elementName = this.props.elementName;
     const elementType = this.props.elementType;
     const fromSingleElement = "single_element";
-    const fromRouterElement = "router_element";
+    const fromRouterElement = "v_router_element";
 
     if (elementType === "Single Element") {
       this.fs.copyTpl(

@@ -39,7 +39,7 @@ class DemoElement extends LitElement {
       <div class="text-container">
         <p>This a LitElement base component.</p>
         <p>For documentation open README file at directory's root</p>
-        <p>Made with ❤️ by <a target="_blank" href="https://github.com/marco238">Marcos</a></p>
+        <p>Made with ❤️ by <a rel="noreferrer" target="_blank" href="https://github.com/marco238">Marcos</a></p>
       </div>
     `;
   }
