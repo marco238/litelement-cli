@@ -1,6 +1,6 @@
 {
   "name": "generator-litelement-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple LitElement CLI to generate a complete modern web component scaffolding. Includes Webpack, Babel, Karma, Documentation and IE11 support. Router is an option :)",
   "homepage": "https://github.com/marco238/litelement-cli",
   "author": {

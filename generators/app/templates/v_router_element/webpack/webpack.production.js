@@ -1,4 +1,3 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { resolve } = require('path');
 
@@ -18,16 +17,7 @@ const polyfils = [
 ];
 
 module.exports = () => ({
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
-      }
-    ]
-  },
   plugins: [
-    new MiniCssExtractPlugin(),
     new CopyWebpackPlugin([...polyfils], {
       ignore: ['.DS_Store']
     })

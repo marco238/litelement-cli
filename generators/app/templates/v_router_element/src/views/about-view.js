@@ -38,7 +38,7 @@ class AboutView extends LitElement {
     return html`
       <h2>${this.title}</h2>
       <div class="text-container">
-        <p>This a LitElement base component with routing.</p>
+        <p>This is a LitElement base component with routing.</p>
         <p>For documentation about Router please check out <a target="_blank" href="https://www.npmjs.com/package/@vaadin/router">Vaadin Router</a>.</p>
         <p>Made with ❤️ by <a target="_blank" href="https://github.com/marco238">Marcos</a></p>
       </div>
