@@ -12,5 +12,12 @@ module.exports = () =>({
         removeComments: true
       }
     })
-  ]
+  ],
+  devServer: {
+    inline: true,
+    host: '127.0.0.1',
+    compress: true,
+    historyApiFallback: true,
+    writeToDisk: true
+  }
 });

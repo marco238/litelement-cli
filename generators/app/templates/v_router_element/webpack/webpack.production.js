@@ -1,25 +1,29 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { resolve } = require('path');
-
-const webcomponents = './node_modules/@webcomponents/webcomponentsjs';
-
-const polyfils = [
-  {
-    from: resolve(`${webcomponents}/webcomponents-loader.js`),
-    to: 'vendor',
-    flatten: true
-  },
-  {
-    from: resolve(`${webcomponents}/custom-elements-es5-adapter.js`),
-    to: 'vendor',
-    flatten: true
-  }
-];
+const TerserPlugin = require('terser-webpack-plugin');
+var BrotliPlugin = require('brotli-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = () => ({
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
+    ],
+  },
   plugins: [
-    new CopyWebpackPlugin([...polyfils], {
-      ignore: ['.DS_Store']
+    new CleanWebpackPlugin(),
+    new BrotliPlugin({
+      asset: '[path].br[query]',
+      test: /\.(js|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8
     })
   ]
 });
