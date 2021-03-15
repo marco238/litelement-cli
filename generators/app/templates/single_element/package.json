@@ -4,8 +4,8 @@
   "description": "LitElement basic config",
   "main": "index.js",
   "scripts": {
-    "dev": "web-dev-server --app-index index.html --node-resolve --open --watch",
-    "prod": "npm run build && web-dev-server --root-dir dist --app-index index.html --open",
+    "dev": "webpack-dev-server --app-index index.html --env.mode development --node-resolve --open --watch",
+    "prod": "npm run build && webpack-dev-server --root-dir dist --app-index index.html --env.mode production --open",
     "build:es5": "webpack --config=webpack_es5.config.js --env.mode production && cp node_modules/core-js-bundle/minified.js dist/legacy/vendor/core-js.min.js",
     "build:es6": "webpack --env.mode production",
     "build": "npm run build:es6 && npm run build:es5",
@@ -14,11 +14,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/duplexascensores/starter-kit-component-lit-element.git"
+    "url": "git+ssh://git@github.com:marco238/LitElement-Starter-Kit.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/duplexascensores/starter-kit-component-lit-element#readme",
+  "homepage": "",
   "dependencies": {
     "lit-element": "^2.2.1"
   },
@@ -35,7 +35,6 @@
     "@babel/preset-env": "^7.7.1",
     "@esm-bundle/chai": "^4.1.5",
     "@open-wc/testing": "^2.4.2",
-    "@web/dev-server": "0.0.25",
     "@web/test-runner": "^0.9.7",
     "@webcomponents/webcomponentsjs": "^2.4.0",
     "babel-loader": "^8.0.6",
@@ -49,6 +48,7 @@
     "html-webpack-plugin": "^3.2.0",
     "lit-scss-loader": "^1.0.0",
     "node-sass": "^4.13.1",
+    "picomatch": "^2.2.2",
     "portfinder-sync": "0.0.2",
     "sass-loader": "^8.0.2",
     "terser-webpack-plugin": "^2.3.5",
